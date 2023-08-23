@@ -28,7 +28,6 @@ Route::group(['middleware' => 'teacher'], function () {
 
 Route::group(['middleware' => 'student'], function () {
     Route::get('/student/dashboard', [DashboardController::class, 'dashboard']);
-    
 });
 
 Route::group(['middleware' => 'parent'], function () {
