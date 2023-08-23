@@ -44,6 +44,19 @@ class User extends Authenticatable
     ];
 
 
+    static public function getSingle($id)
+    {
+return self::find($id);
+    }
+
+    static public function getAdmin()
+    {
+        return self::select('users.*')
+            ->where('user_type', '=', 1)
+            ->where('is_delete', '=', 0)
+            ->orderBy('id', 'desc')
+            ->get();
+    }
     static public function getEmailSingle($email)
     {
         return User::where('email', '=', $email)->first();

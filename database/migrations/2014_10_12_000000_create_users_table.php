@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->tinyInteger('user_type')->default(1)->comment('1:admin, 2:teacher, 3:student, 4:parent');
+            $table->tinyInteger('is_delete')->default(0);
             $table->timestamps();
         });
     }
