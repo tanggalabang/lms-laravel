@@ -57,7 +57,7 @@ class User extends Authenticatable
             ->where('user_type', '=', 1)
             ->where('is_delete', '=', 0);
         if (!empty(Request::get('name'))) {
-            $return = $return->where('email', 'like', '%' . Request::get('name') . '%');
+            $return = $return->where('name', 'like', '%' . Request::get('name') . '%');
         }
         if (!empty(Request::get('email'))) {
             $return = $return->where('email', 'like', '%' . Request::get('email') . '%');
