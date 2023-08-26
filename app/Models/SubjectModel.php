@@ -33,5 +33,23 @@ class SubjectModel extends Model
     {
         return self::find($id);
     }
+        static public function getSubject()
+        {
+
+        $return = SubjectModel::select('subject.*')
+            ->join('users', 'users.id', 'subject.created_by')
+            // if (!empty(Request::get('name'))) {
+            //     $return = $return->where('class.name', 'like', '%' . Request::get('name') . '%');
+            // }
+            // if (!empty(Request::get('date'))) {
+            //     $return = $return->whereDate('class.created_at', '=', Request::get('date'));
+            // }
+            ->where('subject.is_delete', '=', 0)
+            ->where('subject.status', '=', 0)
+            ->orderBy('subject.name', 'asc')
+            ->get();
+
+        return $return;
+        }
 
 }

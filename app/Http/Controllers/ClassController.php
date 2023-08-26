@@ -36,9 +36,7 @@ class ClassController extends Controller
         if (!empty($data['getRecord'])) {
             $data['header_title'] = "Edit Class";
             return view('admin.class.edit', $data);
-        }
-        else
-        {
+        } else {
             abort(404);
         }
     }
