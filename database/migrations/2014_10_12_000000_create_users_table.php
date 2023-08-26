@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('blood_group', 10)->nullable();
             $table->string('height', 10)->nullable();
             $table->string('weight', 10)->nullable();
+            $table->string('occupation')->nullable();
+            $table->string('address')->nullable();
             $table->tinyInteger('user_type')->default(1)->comment('1:admin, 2:teacher, 3:student, 4:parent');
             $table->tinyInteger('is_delete')->default(0);
             $table->tinyInteger('status')->default(0)->nullable();
