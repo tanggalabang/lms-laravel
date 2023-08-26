@@ -111,7 +111,7 @@
                                             <label>Mobile Number <span style="color: red;">*</span></label>
                                             <input type="text" class="form-control" value="{{ old('mobile_number', $getRecord->mobile_number) }}"
                                                 name="mobile_number" required placeholder="Mobile Number">
-                                        <div style="color: red;">
+                                    <div style="color: red;">
                                             {{ $errors->first('mobile_number') }}
                                         </div>
                                         </div>
@@ -138,7 +138,7 @@
                                             <label>Blood Group <span style="color: red;">*</span></label>
                                             <input type="text" class="form-control" value="{{ old('blood_group', $getRecord->blood_group) }}"
                                                 name="blood_group" required placeholder="Blood Group">
-                                        <div style="color: red;">
+                    <div style="color: red;">
                                             {{ $errors->first('blood_group') }}
                                         </div>
                                         </div>
@@ -161,7 +161,8 @@
                                         <div class="form-group col-md-6">
                                             <label>Status <span style="color: red;">*</span></label>
                                             <select name="status" class="form-control" required>
-                                                <option value="">Select Gender</option>
+                                                <option value="">Select Status
+                                                </option>
                                                 <option {{(old('status', $getRecord->status) == 0)? 'selected': ''}} value="0">Active</option>
                                                 <option {{(old('status', $getRecord->status) == 1)? 'selected': ''}} value="1">Inactive</option>
                                             </select>
