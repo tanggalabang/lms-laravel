@@ -116,7 +116,7 @@
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label>Created Date</label>
-                                            <input type="date" class="form-control" value="{{ Request::get('date') }}"
+                                            <input type="date" class="form-ucontrol" value="{{ Request::get('date') }}"
                                                 name="date">
                                         </div>
                                         <div class="form-group col-md-3">

@@ -60,15 +60,15 @@
                                             </select>
                                         </div>
                                         <div class="form-group col-md-2">
-                                            <label>Material Status</label>
+                                            <label>Marital Status</label>
                                             <input type="text" class="form-control"
-                                                value="{{ Request::get('material_status') }}" name="material_status"
-                                                placeholder="Material Status">
+                                                value="{{ Request::get('marital_status') }}" name="marital_status"
+                                                placeholder="Marital Status">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <label>Current Address</label>
                                             <input type="text" class="form-control"
-                                                value="{{ Request::get('current_address') }}" name="current_address"
+                                                value="{{ Request::get('address') }}" name="address"
                                                 placeholder="Current Address">
                                         </div>
                                         <div class="form-group col-md-2">
