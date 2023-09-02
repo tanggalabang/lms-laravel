@@ -201,7 +201,7 @@ class User extends Authenticatable
         // dd(Request::all());
         if (!empty(Request::get('id')) || !empty(Request::get('name')) || !empty(Request::get('last_name')) || !empty(Request::get('email'))) {
             $return = self::select('users.*', 'class.name as class_name', 'parent.name as parent_name')
-                ->join('users as parent', 'parent.id', '=', 'users.parent_id', 'left')
+                ->join('users as parent', 'parent.id', '=', 'users.parent_id')
                 ->join('class', 'class.id',  '=', 'users.class_id', 'left')
                 ->where('users.user_type', '=', 3)
                 ->where('users.is_delete', '=', 0);
