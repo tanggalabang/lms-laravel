@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ClassSubjectModel;
 use App\Models\SubjectModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -60,11 +61,24 @@ class SubjectController extends Controller
         $save->save();
         return redirect()->back()->with('success', "Subject succesfully deleted");
     }
-    //
+
+    // studetn side
     public function mySubject()
     {
         $data['getRecord'] = ClassSubjectModel::mySubject(Auth::user()->class_id);
+
         $data['header_title'] = "My Subject List";
         return view('student.my_subject', $data);
+    }
+
+    //parent side
+    public function parentStudentSubject($student_id)
+    {
+        $user = User::getSingle($student_id);
+        $data['getUser'] = $user;
+        $data['getRecord'] = ClassSubjectModel::mySubject($user->class_id);
+
+        $data['header_title'] = "";
+        return view('parent.my_student_subject', $data);
     }
 }
